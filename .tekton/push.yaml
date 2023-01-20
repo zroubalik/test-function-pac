@@ -13,11 +13,11 @@ metadata:
 
     # Fetch the git-clone task from hub, we are able to reference later on it
     # with taskRef and it will automatically be embedded into our pipeline.
-    #pipelinesascode.tekton.dev/task: "git-clone"
+    pipelinesascode.tekton.dev/task: "git-clone:0.3"
 
     # Task for Nodejs
-    #pipelinesascode.tekton.dev/task-1: "[npm]"
-    pipelinesascode.tekton.dev/task: "[npm]"
+    pipelinesascode.tekton.dev/task-1: "[npm]"
+    #pipelinesascode.tekton.dev/task: "[npm]"
 
     # You can add more tasks by increasing the suffix number, you can specify them as array to have multiple of them.
     # browse the tasks you want to include from hub on https://hub.tekton.dev/
@@ -44,7 +44,6 @@ spec:
     tasks:
       - name: fetch-repository
         taskRef:
-          kind: Task
           name: git-clone
         workspaces:
           - name: output
