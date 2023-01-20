@@ -43,6 +43,7 @@ spec:
     tasks:
       - name: fetch-repository
         taskRef:
+          kidn: Task
           name: git-clone
         workspaces:
           - name: output
