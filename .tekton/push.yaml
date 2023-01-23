@@ -18,7 +18,6 @@ metadata:
 
     # Task for Nodejs
     pipelinesascode.tekton.dev/task-1: "[npm]"
-    #pipelinesascode.tekton.dev/task: "[npm]"
 
     # You can add more tasks by increasing the suffix number, you can specify them as array to have multiple of them.
     # browse the tasks you want to include from hub on https://hub.tekton.dev/
