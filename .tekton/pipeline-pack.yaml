@@ -64,6 +64,8 @@ spec:
         - name: ENV_VARS
           value:
             - '$(params.buildEnvs[*])'
+      runAfter:
+        - fetch-sources
       taskRef:
         kind: Task
         name: func-buildpacks
