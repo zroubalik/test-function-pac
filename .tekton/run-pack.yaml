@@ -38,7 +38,7 @@ spec:
       value: ''
     - name: imageName
       value: >-
-        image-registry.openshift-image-registry.svc:5000/demo/test-function-pac:latest
+        docker.io/zroubalik/test-function-pac:latest
     - name: builderImage
       value: 'gcr.io/paketo-buildpacks/builder:base'
     - name: buildEnvs
