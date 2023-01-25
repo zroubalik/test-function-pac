@@ -30,7 +30,6 @@ metadata:
     # How many runs we want to keep attached to this event
     pipelinesascode.tekton.dev/max-keep-runs: "5"
   generateName: test-function-pac-
-  namespace: default
 spec:
   params:
     - name: gitRepository
