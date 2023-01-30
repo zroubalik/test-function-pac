@@ -1,20 +1,22 @@
 specVersion: 0.35.0
 name: test-function-pac
 runtime: node
-registry: ""
-image: ""
+registry: docker.io/zroubalik
+image: docker.io/zroubalik/test-function-pac:latest
 imageDigest: ""
 created: 2023-01-20T19:43:04.84196+01:00
 build:
+  git:
+    url: https://github.com/zroubalik/test-function-pac
   buildpacks: []
-  builder: ""
+  builder: pack
   buildEnvs: []
 run:
   volumes: []
   envs: []
 deploy:
-  namespace: ""
-  remote: false
+  namespace: demo
+  remote: true
   annotations: {}
   options: {}
   labels: []
