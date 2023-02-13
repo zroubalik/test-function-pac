@@ -20,8 +20,8 @@ metadata:
     # with taskRef and it will automatically be embedded into our pipeline.
     pipelinesascode.tekton.dev/task: "git-clone"
 
-    #pipelinesascode.tekton.dev/task-1: "https://raw.githubusercontent.com/knative/func/main/pipelines/resources/tekton/task/func-buildpacks/0.1/func-buildpacks.yaml"
-    #pipelinesascode.tekton.dev/task-2: "https://raw.githubusercontent.com/knative/func/main/pipelines/resources/tekton/task/func-deploy/0.1/func-deploy.yaml"
+    pipelinesascode.tekton.dev/task-1: "https://raw.githubusercontent.com/knative/func/main/pipelines/resources/tekton/task/func-buildpacks/0.1/func-buildpacks.yaml"
+    pipelinesascode.tekton.dev/task-2: "https://raw.githubusercontent.com/knative/func/main/pipelines/resources/tekton/task/func-deploy/0.1/func-deploy.yaml"
 
     pipelinesascode.tekton.dev/pipeline: "[.tekton/pipeline-pack.yaml]"
 
