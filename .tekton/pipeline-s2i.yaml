@@ -10,7 +10,6 @@ metadata:
   annotations:
     # Fetch the git-clone task from hub, we are able to reference later on it
     # with taskRef and it will automatically be embedded into our pipeline.
-    #pipelinesascode.tekton.dev/task: "git-clone:0.4"
     pipelinesascode.tekton.dev/task: "git-clone"
 
     pipelinesascode.tekton.dev/task-1: "https://raw.githubusercontent.com/knative/func/main/pipelines/resources/tekton/task/func-s2i/0.1/func-s2i.yaml"
