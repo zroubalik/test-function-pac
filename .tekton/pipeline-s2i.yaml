@@ -20,7 +20,7 @@ metadata:
   name: test-function-pac-s2i-git-pipeline
 spec:
   params:
-  - default: https://github.com/lance/viewer
+  - default: ''
     description: Git repository that hosts the function project
     name: gitRepository
     type: string
