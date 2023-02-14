@@ -45,7 +45,7 @@ spec:
       - =
   pipelineRef:
     name: test-function-pac-s2i-git-pipeline
-  serviceAccountName: pipeline
+  #serviceAccountName: pipeline
   timeout: 1h0m0s
   workspaces:
     - name: source-workspace
