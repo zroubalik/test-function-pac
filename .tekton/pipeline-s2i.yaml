@@ -7,6 +7,7 @@ metadata:
     function.knative.dev: "true"
     function.knative.dev/name: viewer
     function.knative.dev/runtime: node
+    
   annotations:
     # Fetch the git-clone task from hub, we are able to reference later on it
     # with taskRef and it will automatically be embedded into our pipeline.
