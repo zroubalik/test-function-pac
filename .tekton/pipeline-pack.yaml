@@ -10,13 +10,13 @@ metadata:
   annotations:
     # Fetch the git-clone task from hub, we are able to reference later on it
     # with taskRef and it will automatically be embedded into our pipeline.
-    pipelinesascode.tekton.dev/task: "git-clone"
+    #pipelinesascode.tekton.dev/task: "git-clone"
 
     #pipelinesascode.tekton.dev/task-1: "https://raw.githubusercontent.com/knative/func/main/pipelines/resources/tekton/task/func-buildpacks/0.1/func-buildpacks.yaml"
     #pipelinesascode.tekton.dev/task-2: "https://raw.githubusercontent.com/knative/func/main/pipelines/resources/tekton/task/func-deploy/0.1/func-deploy.yaml"
 
     # How many runs we want to keep attached to this event
-    pipelinesascode.tekton.dev/max-keep-runs: "5"
+    #pipelinesascode.tekton.dev/max-keep-runs: "5"
   name: test-function-pac-git-pipeline
 spec:
   params:
