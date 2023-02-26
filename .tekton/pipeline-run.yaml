@@ -47,6 +47,7 @@ spec:
       value: gcr.io/paketo-buildpacks/builder:base
     - name: buildEnvs
       value:
+        - =
         
   pipelineRef:
    name: test-function-pac-pack-pac-pipeline
