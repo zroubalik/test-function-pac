@@ -2,9 +2,9 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   labels:
-    foo:bar
+    foo: bar
   annotations:
-    foo:bar
+    foo: bar
   name: test-function-pac-pack-pac-pipeline
 spec:
   params:
