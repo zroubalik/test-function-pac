@@ -62,7 +62,7 @@ spec:
               storage: 1Gi
       #  persistentVolumeClaim:
       #    claimName: test-function-pac-pack-pac-pipeline-pvc
-      #  subPath: source
+        subPath: source
      - name: cache-workspace
        volumeClaimTemplate:
         spec:
@@ -73,7 +73,7 @@ spec:
               storage: 1Gi
       #  persistentVolumeClaim:
       #    claimName: test-function-pac-pack-pac-pipeline-pvc
-      #  subPath: cache
+        subPath: cache
      - name: dockerconfig-workspace
        secret:
          secretName: test-function-pac-pack-pac-pipeline-secret
