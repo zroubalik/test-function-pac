@@ -51,7 +51,7 @@ spec:
         
   pipelineRef:
    name: test-function-pac-pack-pac-pipeline
-   workspaces:
+  workspaces:
     - name: source-workspace
       volumeClaimTemplate:
         spec:
