@@ -38,7 +38,7 @@ spec:
     - name: gitRevision
       value: {{ revision }}
     - name: contextDir
-      value: ""
+      value: 
     - name: imageName
       value: docker.io/zroubalik/test-function-pac:latest
     - name: registry
@@ -47,9 +47,9 @@ spec:
       value: gcr.io/paketo-buildpacks/builder:base
     - name: buildEnvs
       value:
-        - =
+        
   pipelineRef:
-   name: test-function-pac-pac-pack-pipeline
+   name: test-function-pac-pack-pac-pipeline
    workspaces:
      - name: source-workspace
        persistentVolumeClaim:
