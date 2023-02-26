@@ -87,6 +87,6 @@ spec:
       name: source-workspace
     - description: Directory where build cache is stored.
       name: cache-workspace
-    - description:     Directory containing image registry credentials stored in config.json file.
+    - description: Directory containing image registry credentials stored in config.json file.
       name: dockerconfig-workspace
       optional: true
