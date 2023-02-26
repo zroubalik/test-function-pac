@@ -51,15 +51,15 @@ spec:
         
   pipelineRef:
    name: test-function-pac-pack-pac-pipeline
-   workspaces:
-     - name: source-workspace
-       persistentVolumeClaim:
-         claimName: test-function-pac-pack-pac-pipeline-pvc
-       subPath: source
-     - name: cache-workspace
-       persistentVolumeClaim:
-         claimName: test-function-pac-pack-pac-pipeline-pvc
-       subPath: cache
-     - name: dockerconfig-workspace
-       secret:
-         secretName: test-function-pac-pack-pac-pipeline-secret
+  workspaces:
+    - name: source-workspace
+      persistentVolumeClaim:
+        claimName: test-function-pac-pack-pac-pipeline-pvc
+      subPath: source
+    - name: cache-workspace
+      persistentVolumeClaim:
+        claimName: test-function-pac-pack-pac-pipeline-pvc
+      subPath: cache
+    - name: dockerconfig-workspace
+      secret:
+        secretName: test-function-pac-pack-pac-pipeline-secret
