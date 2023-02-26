@@ -4,7 +4,7 @@ kind: PipelineRun
 metadata:
   labels:
     
-    #tekton.dev/pipeline: test-function-pac-pack-pac-pipeline
+    tekton.dev/pipeline: test-function-pac-pack-pac-pipeline
   annotations:
     # The event we are targeting as seen from the webhook payload
     # this can be an array too, i.e: [pull_request, push]
@@ -51,25 +51,15 @@ spec:
         
   pipelineRef:
    name: test-function-pac-pack-pac-pipeline
-  workspaces:
-    - name: source-workspace
-      volumeClaimTemplate:
-        spec:
-          accessModes:
-            - ReadWriteOnce
-          resources:
-            requests:
-              storage: 1Gi
-      subPath: source
-    - name: cache-workspace
-      volumeClaimTemplate:
-        spec:
-          accessModes:
-            - ReadWriteOnce
-          resources:
-            requests:
-              storage: 1Gi
-      subPath: cache
-    - name: dockerconfig-workspace
-      secret:
-        secretName: test-function-pac-pack-pac-pipeline-secret
+   workspaces:
+     - name: source-workspace
+       persistentVolumeClaim:
+         claimName: test-function-pac-pack-pac-pipeline-pvc
+       subPath: source
+     - name: cache-workspace
+       persistentVolumeClaim:
+         claimName: test-function-pac-pack-pac-pipeline-pvc
+       subPath: cache
+     - name: dockerconfig-workspace
+       secret:
+         secretName: test-function-pac-pack-pac-pipeline-secret
