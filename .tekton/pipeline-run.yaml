@@ -53,13 +53,27 @@ spec:
    name: test-function-pac-pack-pac-pipeline
    workspaces:
      - name: source-workspace
-       persistentVolumeClaim:
-         claimName: test-function-pac-pack-pac-pipeline-pvc
-       subPath: source
+       volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+      #  persistentVolumeClaim:
+      #    claimName: test-function-pac-pack-pac-pipeline-pvc
+      #  subPath: source
      - name: cache-workspace
-       persistentVolumeClaim:
-         claimName: test-function-pac-pack-pac-pipeline-pvc
-       subPath: cache
+       volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+      #  persistentVolumeClaim:
+      #    claimName: test-function-pac-pack-pac-pipeline-pvc
+      #  subPath: cache
      - name: dockerconfig-workspace
        secret:
          secretName: test-function-pac-pack-pac-pipeline-secret
