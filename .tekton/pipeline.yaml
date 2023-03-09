@@ -68,7 +68,7 @@ spec:
         - fetch-sources
       taskRef:
         kind: Task
-        name: func-s2
+        name: func-s2i
       workspaces:
         - name: source
           workspace: source-workspace
