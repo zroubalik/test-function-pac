@@ -4,7 +4,7 @@ kind: PipelineRun
 metadata:
   labels:
     
-    tekton.dev/pipeline: test-function-pac-s2i-git-pipeline
+    tekton.dev/pipeline: test-function-pac-pack-git-pipeline
   annotations:
     # The event we are targeting as seen from the webhook payload
     # this can be an array too, i.e: [pull_request, push]
@@ -16,8 +16,8 @@ metadata:
     # Fetch the git-clone task from hub
     pipelinesascode.tekton.dev/task: git-clone
 
-    # Fetch the func-s2i task
-    pipelinesascode.tekton.dev/task-1: https://raw.githubusercontent.com/knative/func/main/pkg/pipelines/resources/tekton/task/func-s2i/0.1/func-s2i.yaml
+    # Fetch the func-buildpacks task
+    pipelinesascode.tekton.dev/task-1: https://raw.githubusercontent.com/knative/func/main/pkg/pipelines/resources/tekton/task/func-buildpacks/0.1/func-buildpacks.yaml
 
     # Fetch the func-deploy task
     pipelinesascode.tekton.dev/task-2: https://raw.githubusercontent.com/knative/func/main/pkg/pipelines/resources/tekton/task/func-deploy/0.1/func-deploy.yaml
@@ -30,7 +30,7 @@ metadata:
 
     # User defined Annotations
     
-  generateName: test-function-pac-s2i-git-pipeline-run
+  generateName: test-function-pac-pack-git-pipeline-run
 spec:
   params:
     - name: gitRepository
@@ -38,30 +38,28 @@ spec:
     - name: gitRevision
       value: {{ revision }}
     - name: contextDir
-      value: .
+      value: 
     - name: imageName
       value: docker.io/zroubalik/test-function-pac:latest
     - name: registry
       value: docker.io/zroubalik
     - name: builderImage
-      value: registry.access.redhat.com/ubi8/nodejs-16
+      value: gcr.io/paketo-buildpacks/builder:base
     - name: buildEnvs
       value:
         - =
         
-    - name: s2iImageScriptsUrl
-      value: image:///usr/libexec/s2i
   pipelineRef:
-   name: test-function-pac-s2i-git-pipeline
+   name: test-function-pac-pack-git-pipeline
   workspaces:
     - name: source-workspace
       persistentVolumeClaim:
-        claimName: test-function-pac-s2i-git-pipeline-pvc
+        claimName: test-function-pac-pack-git-pipeline-pvc
       subPath: source
     - name: cache-workspace
       persistentVolumeClaim:
-        claimName: test-function-pac-s2i-git-pipeline-pvc
+        claimName: test-function-pac-pack-git-pipeline-pvc
       subPath: cache
     - name: dockerconfig-workspace
       secret:
-        secretName: test-function-pac-s2i-git-pipeline-secret
+        secretName: test-function-pac-pack-git-pipeline-secret
